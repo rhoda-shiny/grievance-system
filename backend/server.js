@@ -11,6 +11,15 @@ app.use(express.json());
 // Database connection
 const db = require("./db");
 
+// Optional: check DB connection on start
+db.connect((err) => {
+  if (err) {
+    console.error("❌ DB connection error:", err);
+  } else {
+    console.log("✅ DB Connected Successfully");
+  }
+});
+
 // Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/complaints", require("./routes/complaints"));
@@ -19,7 +28,7 @@ app.use("/api/complaints", require("./routes/complaints"));
 app.get("/api/users", (req, res) => {
   db.query("SELECT user_id, name, email FROM users", (err, result) => {
     if (err) {
-      console.error("Error fetching users:", err);
+      console.error("❌ Error fetching users:", err);
       return res.status(500).json({ message: "Error fetching users" });
     }
     res.json(result);
@@ -31,7 +40,7 @@ app.get("/", (req, res) => {
   res.send("🚀 Grievance Backend is Running");
 });
 
-// ✅ IMPORTANT: Use dynamic port (Render requirement)
+// Use dynamic port (important for deployment)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
