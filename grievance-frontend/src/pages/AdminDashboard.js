@@ -123,7 +123,7 @@ function AdminDashboard({ theme }) {
   );
 }
 
-/* ✅ ADD THIS (THIS WAS MISSING) */
+/* STYLES */
 
 const page = {
   padding: "30px",
