@@ -13,7 +13,7 @@ function Register({ theme }) {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://grievance-system-5h08.onrender.com/api/auth/register", {
         ...form,
         role: "student"
       });
@@ -57,8 +57,6 @@ function Register({ theme }) {
   );
 }
 
-/* 🎨 STYLES ONLY */
-
 const container = (t) => ({
   display: "flex",
   justifyContent: "center",
@@ -94,6 +92,5 @@ const btn = (t) => ({
   color: "#fff",
   fontWeight: "bold"
 });
-
 
 export default Register;

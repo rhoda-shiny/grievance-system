@@ -5,7 +5,7 @@ function Users({ theme }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users")
+    axios.get("https://grievance-system-5h08.onrender.com/api/users")
       .then(res => setUsers(res.data))
       .catch(() => alert("Error fetching users"));
   }, []);
@@ -15,12 +15,7 @@ function Users({ theme }) {
       <h2>Registered Users</h2>
 
       {users.map(u => (
-        <div key={u.user_id} style={{
-          background: theme.primary,
-          padding: "10px",
-          margin: "10px 0",
-          borderRadius: "8px"
-        }}>
+        <div key={u.user_id}>
           <p>{u.name}</p>
           <p>{u.email}</p>
         </div>

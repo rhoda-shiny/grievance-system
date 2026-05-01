@@ -5,7 +5,7 @@ function SolvedComplaints({ theme }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/complaints")
+    axios.get("https://grievance-system-5h08.onrender.com/api/complaints")
       .then(res => setData(res.data.filter(c => c.status === "Resolved")));
   }, []);
 
