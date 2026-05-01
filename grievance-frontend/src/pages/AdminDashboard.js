@@ -123,4 +123,86 @@ function AdminDashboard({ theme }) {
   );
 }
 
+/* ✅ ADD THIS (THIS WAS MISSING) */
+
+const page = {
+  padding: "30px",
+  minHeight: "100vh",
+  background: "#f4f7fb"
+};
+
+const header = {
+  display: "flex",
+  justifyContent: "space-between",
+  marginBottom: "20px"
+};
+
+const tabContainer = {
+  display: "flex",
+  gap: "10px",
+  marginBottom: "20px"
+};
+
+const tab = (active) => ({
+  padding: "10px 18px",
+  borderRadius: "20px",
+  border: "none",
+  cursor: "pointer",
+  background: active ? "#6c5ce7" : "#ddd",
+  color: active ? "#fff" : "#333",
+  fontWeight: "bold"
+});
+
+const input = {
+  width: "100%",
+  padding: "12px",
+  margin: "10px 0",
+  borderRadius: "10px",
+  border: "1px solid #ddd"
+};
+
+const card = {
+  background: "#fff",
+  padding: "15px",
+  marginBottom: "10px",
+  borderRadius: "12px",
+  boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+};
+
+const card2 = {
+  background: "#fff",
+  padding: "15px",
+  marginTop: "10px",
+  borderRadius: "12px",
+  boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+};
+
+const blueBtn = {
+  padding: "8px 14px",
+  border: "none",
+  borderRadius: "8px",
+  background: "#0984e3",
+  color: "#fff",
+  cursor: "pointer"
+};
+
+const greenBtn = {
+  padding: "8px 14px",
+  border: "none",
+  borderRadius: "8px",
+  background: "#00b894",
+  color: "#fff",
+  cursor: "pointer"
+};
+
+const logoutBtn = {
+  padding: "8px 16px",
+  height: "40px",
+  background: "#e74c3c",
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer"
+};
+
 export default AdminDashboard;
